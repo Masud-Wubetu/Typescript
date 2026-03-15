@@ -24,3 +24,4 @@ let employee: {
         console.log(date)
     }
  }
+ let Masud: number = 9348;
