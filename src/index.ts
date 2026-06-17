@@ -117,18 +117,33 @@
 //     }
 // }
 
-abstract class Shape {
-    constructor(public color: string) {}
+// 
 
-    abstract render(): void;
+// abstract class Calendar {
+//     constructor(public name: string) {}
+
+//     abstract addEvent(): void;
+//     abstract removeEvent(): void;
+// }
+
+
+interface Calendar {
+    name: string;
+    addEvent(): void;
+    removeEvent(): void;
 }
 
-class Circle extends Shape {
-    constructor(public radius: number, color: string) {
-        super(color);
-    }
+interface CloudCalendar extends Calendar{
+    sync(): void;
+}
 
-    override render(): void {
-        console.log('Rendering a circle');
+class GoogleCalendar implements Calendar {
+    constructor(public name: string) {}
+    addEvent(): void {
+        throw new Error("Method not implemented.");
     }
+    removeEvent(): void {
+        throw new Error("Method not implemented.");
+    }
+    
 }

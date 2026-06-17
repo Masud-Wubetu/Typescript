@@ -5,7 +5,6 @@ class Shape {
     constructor(color) {
         this.color = color;
     }
-    render() { }
 }
 class Circle extends Shape {
     radius;
@@ -17,6 +16,6 @@ class Circle extends Shape {
         console.log('Rendering a circle');
     }
 }
-let shape = new Shape('Red');
-shape.render();
+let circle = new Circle(10, 'red');
+circle.render();
 //# sourceMappingURL=index.js.map
