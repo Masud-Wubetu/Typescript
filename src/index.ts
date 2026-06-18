@@ -127,23 +127,30 @@
 // }
 
 
-interface Calendar {
-    name: string;
-    addEvent(): void;
-    removeEvent(): void;
-}
+// interface Calendar {
+//     name: string;
+//     addEvent(): void;
+//     removeEvent(): void;
+// }
 
-interface CloudCalendar extends Calendar{
-    sync(): void;
-}
+// interface CloudCalendar extends Calendar{
+//     sync(): void;
+// }
 
-class GoogleCalendar implements Calendar {
-    constructor(public name: string) {}
-    addEvent(): void {
-        throw new Error("Method not implemented.");
-    }
-    removeEvent(): void {
-        throw new Error("Method not implemented.");
-    }
+// class GoogleCalendar implements Calendar {
+//     constructor(public name: string) {}
+//     addEvent(): void {
+//         throw new Error("Method not implemented.");
+//     }
+//     removeEvent(): void {
+//         throw new Error("Method not implemented.");
+//     }
     
+// }
+
+class KeyValuePair<K, V> {
+    constructor(public key: K, public value: V) {}
 }
+
+let pair = new KeyValuePair('1', "Hello");
+pair.key.toUpperCase();
