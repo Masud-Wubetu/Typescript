@@ -1,11 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-function KgToLib(weight) {
-    if (typeof weight === 'number')
-        return weight * 2.2;
-    else
-        return parseInt(weight) * 2.2;
+function getCustomer(id) {
+    return id === 0 ? null : { birthday: new Date };
 }
-KgToLib(10);
-KgToLib('10');
+let customer = getCustomer(1);
+if (customer !== null && customer !== undefined)
+    console.log(customer.birthday);
 //# sourceMappingURL=index.js.map
