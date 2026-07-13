@@ -41,6 +41,5 @@ function getCustomer(id: number): Customer | null | undefined {
 }
 
 let customer = getCustomer(1)
-
-if (customer !== null && customer !== undefined)
-    console.log(customer.birthday)
+// Optional property access operator
+    console.log(customer?.birthday)
