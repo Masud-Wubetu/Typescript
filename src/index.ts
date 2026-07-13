@@ -23,34 +23,11 @@
 //     }
 // }
 
-function KgToLib(weight: number | string): number {
-    //Narrowing
-    if ( typeof weight === 'number')
-        return weight * 2.2 
-    else
-        return parseInt(weight) * 2.2
+function greet(name: string | null | undefined) {
+    if (name)
+        console.log(name.toUpperCase)
+    else 
+        console.log('Hola!')
 }
 
-KgToLib(10);
-KgToLib('10');
-
-
-type Draggable = {
-    drag: () => void
-}
-
-type Resizable = {
-    resize: () => void
-}
-
-type UIWidget = Draggable & Resizable; 
-
-let textBox: UIWidget = {
-    drag: () => {},
-    resize: () => {}
-}
-
-type Quantity = 50 | 100;
-let quantity: Quantity = 50;
-
-type Matric = 'CM' | "inch";
+greet(undefined)
