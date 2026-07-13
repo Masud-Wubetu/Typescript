@@ -21,10 +21,11 @@
     "declarationMap": true,
 
     // Stricter Typechecking Options
-    "noUncheckedIndexedAccess": true,
+    //"noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
     "noEmitOnError": true,
     "removeComments": true,
+    "noImplicitAny": true,
 
 
     // Style Options

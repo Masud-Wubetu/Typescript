@@ -1,16 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-let sales = 123_456_789;
-let course = 'Typescript';
-let is_published = true;
-let age;
-var Size;
-(function (Size) {
-    Size[Size["Small"] = 0] = "Small";
-    Size[Size["Medium"] = 1] = "Medium";
-    Size[Size["Large"] = 2] = "Large";
-})(Size || (Size = {}));
-;
-let mySize = Size.Medium;
-console.log(mySize);
+function KgToLib(weight) {
+    if (typeof weight === 'number')
+        return weight * 2.2;
+    else
+        return parseInt(weight) * 2.2;
+}
+KgToLib(10);
+KgToLib('10');
 //# sourceMappingURL=index.js.map

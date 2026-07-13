@@ -1,27 +1,51 @@
 
+// function calculateTax(income: number, taxYear = 2022 ): number {
 
-const enum Size { Small, Medium, Large };
+//     if (taxYear < 2022 ) 
+//         return income * 1.2
+//     return income * 1.3
+// } 
 
-let mySize: Size = Size.Medium
-console.log(mySize);
+// calculateTax(10_000, 2023)
 
-function calculateTax(income: number, taxYear: number = 2022): number {
-    if( taxYear < 2022) 
-        return income * 1.2
-    return income * 1.3
+// type Employee = {
+//     id: number,
+//     name: string,
+//     retire: (date: Date) => void
+// }
+
+// let employee: Employee{
+// } = {
+//     id: 1,
+//     name: "Masud",
+//     retire: (date: Date) => {
+//         console.log(date)
+//     }
+// }
+
+function KgToLib(weight: number | string): number {
+    //Narrowing
+    if ( typeof weight === 'number')
+        return weight * 2.2 
+    else
+        return parseInt(weight) * 2.2
 }
 
-calculateTax(10_000);
+KgToLib(10);
+KgToLib('10');
 
-let employee: {
-    readonly id: number,
-    name: string,
-    retire: (date: Date) => void
-} = { 
-    id: 1,
-    name: 'Masud Wubetu', 
-    retire: (date: Date) => {
-        console.log(date)
-    }
- }
- let Masud: number = 9348;
+
+type Draggable = {
+    drag: () => void
+}
+
+type Resizable = {
+    resize: () => void
+}
+
+type UIWidget = Draggable & Resizable; 
+
+let textBox: UIWidget = {
+    drag: () => {},
+    resize: () => {}
+}
