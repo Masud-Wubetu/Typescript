@@ -33,7 +33,7 @@
 // greet(undefined)
 
 type Customer = {
-    birthday: Date
+    birthday?: Date
 }
 
 function getCustomer(id: number): Customer | null | undefined {
@@ -42,4 +42,9 @@ function getCustomer(id: number): Customer | null | undefined {
 
 let customer = getCustomer(1)
 // Optional property access operator
-    console.log(customer?.birthday)
+    console.log(customer?.birthday?.getFullYear())
+
+
+let log: any = null;
+
+log?.('a')
