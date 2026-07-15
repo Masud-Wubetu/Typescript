@@ -48,3 +48,11 @@ let customer = getCustomer(1)
 let log: any = null;
 
 log?.('a')
+
+let speed:number | null = null;
+
+let ride = {
+    //Falsy(undefined, null, '', false, 0)
+    speed: speed ?? 30
+}
+
