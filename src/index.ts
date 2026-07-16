@@ -41,10 +41,10 @@
 
 
 // class Ride {
-//     //Passenger
-//     //pickUpLocation
-//     //dropOffLocation
-//    private static _activerides: number = 0
+        //Passenger
+        //pickUpLocation
+        //dropOffLocation
+        //private static _activerides: number = 0
 
 //     start() {Ride._activerides++;}
 //     stop() {Ride._activerides--;}
@@ -64,55 +64,71 @@
 // console.log(Ride.activerides);
 
 
-class Person {
-    constructor(public firstName: string, public lastName: string) {}
+// class Person {
+//     constructor(public firstName: string, public lastName: string) {}
 
-    get fullName() {
-        return this.firstName + ' ' + this.lastName
-    }
+//     get fullName() {
+//         return this.firstName + ' ' + this.lastName
+//     }
 
-    walk() {
-        console.log('Walking');
-    }
-}
+//     walk() {
+//         console.log('Walking');
+//     }
+// }
 
-class Student extends Person {
+// class Student extends Person {
 
-    constructor(public studentId: number, firstName: string, lastName: string) {
-        super(firstName, lastName);
-    }
+//     constructor(public studentId: number, firstName: string, lastName: string) {
+//         super(firstName, lastName);
+//     }
 
-    takeTest() {
-        console.log('Taking a test');
+//     takeTest() {
+//         console.log('Taking a test');
         
-    }
+//     }
+// }
+
+
+// class Teacher extends Person {
+
+//     override get fullName() {
+//         return 'Professor ' + super.fullName;
+//     }
+// }
+
+// class Principal extends Person {
+//     override get fullName() {
+//         return "Principal " + super.fullName;
+//     }
+// }
+
+// let teacher =  new Teacher("Masud", 'Wubetu');
+// console.log(teacher.fullName);
+
+// printNames([
+//     new Student(1, "Masud", "Wubetu"),
+//     new Teacher('Mosh', 'Hamedani'),
+//     new Principal('Harun', 'Suleyman')
+// ]);
+
+// function printNames(people: Person[]) {
+//     for(let person of people) {
+//         console.log(person.fullName);
+//     }
+// }
+
+abstract class Shape {
+    constructor(public color: string) {}
+
+    abstract render(): void;
 }
 
-
-class Teacher extends Person {
-
-    override get fullName() {
-        return 'Professor ' + super.fullName;
+class Circle extends Shape {
+    constructor(public radius: number, color: string) {
+        super(color);
     }
-}
 
-class Principal extends Person {
-    override get fullName() {
-        return "Principal " + super.fullName;
-    }
-}
-
-let teacher =  new Teacher("Masud", 'Wubetu');
-console.log(teacher.fullName);
-
-printNames([
-    new Student(1, "Masud", "Wubetu"),
-    new Teacher('Mosh', 'Hamedani'),
-    new Principal('Harun', 'Suleyman')
-]);
-
-function printNames(people: Person[]) {
-    for(let person of people) {
-        console.log(person.fullName);
+    override render(): void {
+        console.log('Rendering a circle');
     }
 }
