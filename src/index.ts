@@ -1,12 +1,12 @@
 class Account {
     id: number;
-    name: string;
+    owner: string;
     balance: number
 
 
-    constructor(id:number, name: string, balance: number) {
+    constructor(id:number, owner: string, balance: number) {
         this.id = id,
-        this.name = name,
+        this.owner = owner,
         this.balance = balance
     }
 
@@ -17,4 +17,7 @@ class Account {
     }
 }
 
-Account
+let account = new Account(1, 'Masud', 0);
+
+account.deposit(100);
+console.log(account.balance);
