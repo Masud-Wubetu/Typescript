@@ -88,3 +88,14 @@ type User = {
     age: number,
     occupation?: string
 };
+
+
+type Bird = {
+    fly: () => void
+}
+
+type Fish = {
+    swim: () => void
+}
+
+type pet = Bird | Fish
