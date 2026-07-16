@@ -21,18 +21,13 @@ class Account {
         return this._balance
     }
 
-    set balance(value: number) {
-        if (value < 0)
-            throw new Error("Invalid value")
-        this._balance = value;
-    }
 }
 
 let account = new Account(1, 'Masud', 0);
 
 account.deposit(100);
 console.log(account.balance);
-account.balance = 1000;
+
 
 
 
