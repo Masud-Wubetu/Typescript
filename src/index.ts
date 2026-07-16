@@ -111,3 +111,13 @@ type DayOfWeek = 'Monday'|'Tuesday'|'Wednesday'|'Thursday'|'Friday'|
 // let user = getUser();
 // console.log(user?.address?.street);
 // let x = foo ?? bar();
+
+    //What is the problem in this piece of code?
+// let value: unknown = 'a';
+// console.log(value.toUpperCase());
+
+//value is declared as an unknown type. In order to call methods on an unknown object,
+//we have to use type narrowing rst:
+// let value: unknown = 'a';
+// if (typeof value === 'string')
+// console.log(value.toUpperCase());
