@@ -1,7 +1,6 @@
 class Account {
     nickname?: string
 
-
     constructor(
         public readonly id:number, 
         public owner: string,
@@ -17,16 +16,23 @@ class Account {
     private calculateTax() {
 
     }
-    getBalance(): number {
+
+    get balance(): number {
         return this._balance
+    }
+
+    set balance(value: number) {
+        if (value < 0)
+            throw new Error("Invalid value")
+        this._balance = value;
     }
 }
 
 let account = new Account(1, 'Masud', 0);
 
 account.deposit(100);
-console.log(account.getBalance());
-
+console.log(account.balance);
+account.balance = 1000;
 
 
 
