@@ -99,3 +99,6 @@ type Fish = {
 }
 
 type pet = Bird | Fish
+
+type DayOfWeek = 'Monday'|'Tuesday'|'Wednesday'|'Thursday'|'Friday'|
+                 'Saturday'|'Sunday'
