@@ -32,30 +32,39 @@
 
 // greet(undefined)
 
-type Customer = {
-    birthday?: Date
+// type Customer = {
+//     birthday?: Date
+// }
+
+// function getCustomer(id: number): Customer | null | undefined {
+//     return id === 0 ? null : { birthday: new Date}
+// }
+
+// let customer = getCustomer(1)
+// // Optional property access operator
+//     console.log(customer?.birthday?.getFullYear())
+
+
+// let log: any = null;
+
+// log?.('a')
+
+// let speed:number | null = null;
+
+// let ride = {
+//     //Falsy(undefined, null, '', false, 0)
+//     speed: speed ?? 30
+// }
+
+// let phone = document.getElementById('phone') as HTMLInputElement;
+
+// phone.value
+
+
+function render(document: unknown) {
+    if (typeof document === 'string') {
+        document.toUpperCase()
+    }
+    document.fly();
+    document.whatEverWeWant();
 }
-
-function getCustomer(id: number): Customer | null | undefined {
-    return id === 0 ? null : { birthday: new Date}
-}
-
-let customer = getCustomer(1)
-// Optional property access operator
-    console.log(customer?.birthday?.getFullYear())
-
-
-let log: any = null;
-
-log?.('a')
-
-let speed:number | null = null;
-
-let ride = {
-    //Falsy(undefined, null, '', false, 0)
-    speed: speed ?? 30
-}
-
-let phone = document.getElementById('phone') as HTMLInputElement;
-
-phone.value
