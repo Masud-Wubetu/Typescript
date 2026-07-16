@@ -1,21 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-class Account {
-    id;
-    owner;
-    balance;
-    constructor(id, owner, balance) {
-        this.id = id,
-            this.owner = owner,
-            this.balance = balance;
-    }
-    deposit(amount) {
-        if (amount <= 0)
-            throw new Error('Invalid amount');
-        this.balance += amount;
-    }
+class Ride {
+    activerides = 0;
+    start() { this.activerides++; }
+    stop() { this.activerides--; }
 }
-let account = new Account(1, 'Masud', 0);
-account.deposit(100);
-console.log(account.balance);
+let ride1 = new Ride();
+ride1.start();
+let ride2 = new Ride();
+ride2.start();
+console.log(ride1.activerides);
+console.log(ride2.activerides);
 //# sourceMappingURL=index.js.map
