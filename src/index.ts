@@ -102,3 +102,12 @@ type pet = Bird | Fish
 
 type DayOfWeek = 'Monday'|'Tuesday'|'Wednesday'|'Thursday'|'Friday'|
                  'Saturday'|'Sunday'
+
+                 //Simplify the following code snippets:
+// let user = getUser();
+// console.log(user && user.address ? user.address.street : undefined);
+// let x = foo !== null && foo !== undefined ? foo : bar();
+
+// let user = getUser();
+// console.log(user?.address?.street);
+// let x = foo ?? bar();
