@@ -1,7 +1,8 @@
 class Account {
-    id: number;
+    readonly id: number;
     owner: string;
-    balance: number
+    balance: number;
+    nickname?: string
 
 
     constructor(id:number, owner: string, balance: number) {
@@ -21,3 +22,5 @@ let account = new Account(1, 'Masud', 0);
 
 account.deposit(100);
 console.log(account.balance);
+
+
