@@ -69,16 +69,22 @@
 //     document.whatEverWeWant();
 // }
 
-function reject(message: string): never {
-    throw new Error(message);
-} 
+// function reject(message: string): never {
+//     throw new Error(message);
+// } 
 
-function processEvents(): never {
-    while (true) {
-        // Read a message from a queue
-    }
-}
+// function processEvents(): never {
+//     while (true) {
+         // Read a message from a queue
+//     }
+// }
 
-processEvents();
-reject('...');
-console.log('Hello World');
+// processEvents();
+// reject('...');
+// console.log('Hello World');
+
+type User = {
+    name: string,
+    age: number,
+    occupation?: string
+};
