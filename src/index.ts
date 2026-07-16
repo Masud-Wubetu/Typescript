@@ -56,3 +56,6 @@ let ride = {
     speed: speed ?? 30
 }
 
+let phone = document.getElementById('phone') as HTMLInputElement;
+
+phone.value
