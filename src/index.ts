@@ -40,27 +40,53 @@
 // seats.A5 = "Masud Wubetu"
 
 
-class Ride {
-    //Passenger
-    //pickUpLocation
-    //dropOffLocation
-   private static _activerides: number = 0
+// class Ride {
+//     //Passenger
+//     //pickUpLocation
+//     //dropOffLocation
+//    private static _activerides: number = 0
 
-    start() {Ride._activerides++;}
-    stop() {Ride._activerides--;}
+//     start() {Ride._activerides++;}
+//     stop() {Ride._activerides--;}
 
 
-    static get activerides() {
-        return Ride._activerides
+//     static get activerides() {
+//         return Ride._activerides
+//     }
+// }
+
+
+// let ride1 = new Ride();
+// ride1.start();
+// let ride2 = new Ride();
+// ride2.start();
+
+// console.log(Ride.activerides);
+
+
+class Person {
+    constructor(public firstName: string, public lastName: string) {}
+
+    get fullName() {
+        return this.firstName + ' ' + this.lastName
+    }
+
+    walk() {
+        console.log('Walking');
     }
 }
 
+class Student extends Person {
 
-let ride1 = new Ride();
-ride1.start();
-let ride2 = new Ride();
-ride2.start();
+    constructor(public studentId: number, firstName: string, lastName: string) {
+        super(firstName, lastName);
+    }
 
-console.log(Ride.activerides);
+    takeTest() {
+        console.log('Taking a test');
+        
+    }
+}
 
-
+let student = new Student(1, 'Masud', "wubetu");
+student.
