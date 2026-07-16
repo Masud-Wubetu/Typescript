@@ -61,10 +61,24 @@
 // phone.value
 
 
-function render(document: unknown) {
-    if (typeof document === 'string') {
-        document.toUpperCase()
+// function render(document: unknown) {
+//     if (typeof document === 'string') {
+//         document.toUpperCase()
+//     }
+//     document.fly();
+//     document.whatEverWeWant();
+// }
+
+function reject(message: string): never {
+    throw new Error(message);
+} 
+
+function processEvents(): never {
+    while (true) {
+        // Read a message from a queue
     }
-    document.fly();
-    document.whatEverWeWant();
 }
+
+processEvents();
+reject('...');
+console.log('Hello World');

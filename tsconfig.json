@@ -28,6 +28,7 @@
     "noImplicitAny": true,
 
 
+
     // Style Options
      "noImplicitReturns": true,
     // "noImplicitOverride": true,
@@ -35,6 +36,7 @@
      "noUnusedParameters": true,
     // "noFallthroughCasesInSwitch": true,
     // "noPropertyAccessFromIndexSignature": true,
+    "allowUnreachableCode": false,
 
     // Recommended Options
     "strict": true,
