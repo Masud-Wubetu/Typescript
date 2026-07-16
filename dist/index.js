@@ -1,9 +1,19 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-function getCustomer(id) {
-    return id === 0 ? null : { birthday: new Date };
+class Account {
+    id;
+    name;
+    balance;
+    constructor(id, name, balance) {
+        this.id = id,
+        this.name = name,
+        this.balance = balance;
+    }
+    deposit(amount) {
+        if (amount <= 0)
+            throw new Error('Invalid amount');
+        this.balance += amount;
+    }
 }
-let customer = getCustomer(1);
-if (customer !== null && customer !== undefined)
-    console.log(customer.birthday);
+Account;
 //# sourceMappingURL=index.js.map
