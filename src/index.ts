@@ -28,6 +28,13 @@ let account = new Account(1, 'Masud', 0);
 account.deposit(100);
 console.log(account.balance);
 
+class SeatAssignment {
+    [seatNumber: string]: string
+}
 
-
-
+let seats = new SeatAssignment();
+seats.A1 = 'Mosh';
+seats.A2 = "Harun Suleyman";
+seats.A3 = "Abdisa Kedir";
+seats.A4 = "Miftah Ebrahim";
+seats.A5 = "Masud Wubetu"
