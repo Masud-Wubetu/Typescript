@@ -182,8 +182,8 @@
 // let result2 = fetch<User>('url');
 // result2.data?.username;
 
-function echo<T extends number | string>(value:T): T {
+function echo<T extends {name: string}>(value:T): T {
     return value;
 }
 
-echo(true);
+echo({ name : 'a'});
