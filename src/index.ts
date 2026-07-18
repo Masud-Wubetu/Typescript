@@ -181,8 +181,11 @@
 
 // let result2 = fetch<User>('url');
 // result2.data?.username;
+interface Person {
+    name: string
+}
 
-function echo<T extends {name: string}>(value:T): T {
+function echo<T extends Person>(value:T): T {
     return value;
 }
 
