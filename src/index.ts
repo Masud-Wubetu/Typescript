@@ -207,21 +207,26 @@ class Store<T> {
     add(obj: T): void {
         this._objects.push(obj);
     }
+    // if T is Product
+    // key of T is name | price
+    find(property: keyof T, value: unknown): T | undefined {
+        return this._objects.find(obj => obj[property] === value)
+    }
 }
 // Pass on the generic type parameter
 class CompressibleStore<T> extends Store<T> {
     compress() {}
 }
 
-let store = new CompressibleStore<Product>();
-store.add({name: 'abebe', price: 12});
+// let store = new CompressibleStore<Product>();
+// store.add({name: 'abebe', price: 12});
 
 // Restrict the generic type parameter
-class SearchableStore<T extends { name: string }> extends Store<T> {
-    find(name: string): T | undefined {
-        return this._objects.find(obj => obj.name === name);
-    }
-}
+// class SearchableStore<T extends { name: string }> extends Store<T> {
+//     find(name: string): T | undefined {
+//         return this._objects.find(obj => obj.name === name);
+//     }
+// }
 
 // Fix the generic type parameter
 class ProductStore extends Store<Product> {
@@ -229,3 +234,9 @@ class ProductStore extends Store<Product> {
         return [];
     }
 }
+
+let store = new Store<Product>();
+store.add({ name: 'a', price: 1 });
+store.find('name', 'a');
+store.find('price', 1);
+store.find('nonExistingProperty', 1)
