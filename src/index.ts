@@ -148,9 +148,13 @@
     
 // }
 
-class KeyValuePair<K, V> {
-    constructor(public key: K, public value: V) {}
+// 
+
+class ArrayUtils {
+    static wrapInArray<T>(value: T) {
+        return [value]
+    }
 }
 
-let pair = new KeyValuePair('1', "Hello");
-pair.key.toUpperCase();
+
+let number = ArrayUtils.wrapInArray(1);
