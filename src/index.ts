@@ -196,27 +196,27 @@
 
 // echo(new Customer('a'));
 
-interface Product {
-    name: string;
-    price: number;
-}
+// interface Product {
+//     name: string;
+//     price: number;
+// }
 
-class Store<T> {
-    protected _objects: T[] = [];
+// class Store<T> {
+//     protected _objects: T[] = [];
 
-    add(obj: T): void {
-        this._objects.push(obj);
-    }
-    // if T is Product
-    // key of T is name | price
-    find(property: keyof T, value: unknown): T | undefined {
-        return this._objects.find(obj => obj[property] === value)
-    }
-}
-// Pass on the generic type parameter
-class CompressibleStore<T> extends Store<T> {
-    compress() {}
-}
+//     add(obj: T): void {
+//         this._objects.push(obj);
+//     }
+       // if T is Product
+       // key of T is name | price
+//     find(property: keyof T, value: unknown): T | undefined {
+//         return this._objects.find(obj => obj[property] === value)
+//     }
+// }
+   // Pass on the generic type parameter
+// class CompressibleStore<T> extends Store<T> {
+//     compress() {}
+// }
 
 // let store = new CompressibleStore<Product>();
 // store.add({name: 'abebe', price: 12});
@@ -229,14 +229,37 @@ class CompressibleStore<T> extends Store<T> {
 // }
 
 // Fix the generic type parameter
-class ProductStore extends Store<Product> {
-    filterByCategory(category: string): Product[] {
-        return [];
-    }
+// class ProductStore extends Store<Product> {
+//     filterByCategory(category: string): Product[] {
+//         return [];
+//     }
+// }
+
+// let store = new Store<Product>();
+// store.add({ name: 'a', price: 1 });
+// store.find('name', 'a');
+// store.find('price', 1);
+// store.find('nonExistingProperty', 1);
+
+
+interface Product {
+    name: string;
+    price: number
 }
 
-let store = new Store<Product>();
-store.add({ name: 'a', price: 1 });
-store.find('name', 'a');
-store.find('price', 1);
-store.find('nonExistingProperty', 1)
+type ReadOnly<T> = {
+    readonly [P in keyof T]: T[P];
+}
+
+type Optional<T> = {
+    [K in keyof T]?: T[K];
+}
+
+type Nullable<T> = {
+    [K in keyof T]: T | null;
+}
+ 
+let product: ReadOnly<Product> = {
+    name: 'a',
+    price: 1
+};
