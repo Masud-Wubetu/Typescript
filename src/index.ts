@@ -181,16 +181,37 @@
 
 // let result2 = fetch<User>('url');
 // result2.data?.username;
-class Person {
-    constructor(public name: string) {}
+
+// class Person {
+//     constructor(public name: string) {}
+// }
+
+// class Customer extends Person {
+
+// }
+
+// function echo<T extends Person>(value:T): T {
+//     return value;
+// }
+
+// echo(new Customer('a'));
+
+interface Product {
+    name: string;
+    price: number;
 }
 
-class Customer extends Person {
+class Store<T> {
+    protected _objects: T[] = [];
 
+    add(obj: T): void {
+        this._objects.push(obj);
+    }
+}
+// Pass on the generic type parameter
+class CompressibleStore<T> extends Store<T> {
+    compress() {}
 }
 
-function echo<T extends Person>(value:T): T {
-    return value;
-}
-
-echo(new Customer('a'));
+let store = new CompressibleStore<Product>();
+store.add({name: 'abebe', price: 12})
