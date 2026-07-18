@@ -264,16 +264,23 @@
 //     price: 1
 // };
 
+type ComponentOption = {
+    selector: string
+}
 
-function Component(constructor: Function) {
-    console.log("Component decorator called");
-    constructor.prototype.uniqueId = Date.now();
-    constructor.prototype.insertInDOM = () => {
-        console.log("Inserting the component in the DOM");
+
+function Component (options: ComponentOption) {
+    return (constructor: Function) => {
+        console.log("Component decorator called");
+        constructor.prototype.options = options;
+        constructor.prototype.uniqueId = Date.now();
+        constructor.prototype.insertInDOM = () => {
+            console.log("Inserting the component in the DOM");
+        }
     }
 }
 
-@Component
+@Component({ selector: '#my-profile'})
 class ProfileComponent {
 
 }
