@@ -181,12 +181,16 @@
 
 // let result2 = fetch<User>('url');
 // result2.data?.username;
-interface Person {
-    name: string
+class Person {
+    constructor(public name: string) {}
+}
+
+class Customer extends Person {
+
 }
 
 function echo<T extends Person>(value:T): T {
     return value;
 }
 
-echo({ name : 'a'});
+echo(new Customer('a'));
