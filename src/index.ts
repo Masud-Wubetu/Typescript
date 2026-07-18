@@ -242,24 +242,38 @@
 // store.find('nonExistingProperty', 1);
 
 
-interface Product {
-    name: string;
-    price: number
-}
+// interface Product {
+//     name: string;
+//     price: number
+// }
 
-type ReadOnly<T> = {
-    readonly [P in keyof T]: T[P];
-}
+// type ReadOnly<T> = {
+//     readonly [P in keyof T]: T[P];
+// }
 
-type Optional<T> = {
-    [K in keyof T]?: T[K];
-}
+// type Optional<T> = {
+//     [K in keyof T]?: T[K];
+// }
 
-type Nullable<T> = {
-    [K in keyof T]: T | null;
-}
+// type Nullable<T> = {
+//     [K in keyof T]: T | null;
+// }
  
-let product: ReadOnly<Product> = {
-    name: 'a',
-    price: 1
-};
+// let product: ReadOnly<Product> = {
+//     name: 'a',
+//     price: 1
+// };
+
+
+function Component(constructor: Function) {
+    console.log("Component decorator called");
+    constructor.prototype.uniqueId = Date.now();
+    constructor.prototype.insertInDOM = () => {
+        console.log("Inserting the component in the DOM");
+    }
+}
+
+@Component
+class ProfileComponent {
+
+}
