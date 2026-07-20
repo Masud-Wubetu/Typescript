@@ -268,8 +268,13 @@ type ComponentOption = {
     selector: string
 }
 
+function Pipe(constructor: Function) {
+    console.log('Pipe decorator called');
+    constructor.prototype.pipe = true;
+}
 
-function Component (options: ComponentOption) {
+
+function Component(options: ComponentOption) {
     return (constructor: Function) => {
         console.log("Component decorator called");
         constructor.prototype.options = options;
@@ -280,7 +285,8 @@ function Component (options: ComponentOption) {
     }
 }
 
-@Component({ selector: '#my-profile'})
+@Component({ selector: '#my-profil e'})
+@Pipe
 class ProfileComponent {
 
 }
