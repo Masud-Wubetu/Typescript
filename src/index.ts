@@ -264,29 +264,47 @@
 //     price: 1
 // };
 
-type ComponentOption = {
-    selector: string
+// type ComponentOption = {
+//     selector: string
+// }
+
+// function Pipe(constructor: Function) {
+//     console.log('Pipe decorator called');
+//     constructor.prototype.pipe = true;
+// }
+
+
+// function Component(options: ComponentOption) {
+//     return (constructor: Function) => {
+//         console.log("Component decorator called");
+//         constructor.prototype.options = options;
+//         constructor.prototype.uniqueId = Date.now();
+//         constructor.prototype.insertInDOM = () => {
+//             console.log("Inserting the component in the DOM");
+//         }
+//     }
+// }
+
+// @Component({ selector: '#my-profil e'})
+// @Pipe
+// class ProfileComponent {}
+
+function Log(target: any, methodName: string, descriptor: PropertyDescriptor) {
+    let original = descriptor.value as Function;console.log("Before");  
+    descriptor.value = function(message: string) {
+        console.log("Before");
+        original.call(this, message);
+        console.log("After");
+    }
+    
 }
 
-function Pipe(constructor: Function) {
-    console.log('Pipe decorator called');
-    constructor.prototype.pipe = true;
-}
-
-
-function Component(options: ComponentOption) {
-    return (constructor: Function) => {
-        console.log("Component decorator called");
-        constructor.prototype.options = options;
-        constructor.prototype.uniqueId = Date.now();
-        constructor.prototype.insertInDOM = () => {
-            console.log("Inserting the component in the DOM");
-        }
+class Person {
+    @Log
+    say(message: string) {
+        console.log('Person says ' + message);
     }
 }
 
-@Component({ selector: '#my-profil e'})
-@Pipe
-class ProfileComponent {
-
-}
+let person = new Person();
+person.say("Hello");
