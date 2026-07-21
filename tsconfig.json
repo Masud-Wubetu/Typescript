@@ -11,6 +11,7 @@
     "target": "esnext",
     "types": [],
     "experimentalDecorators": true,
+    "useDefineForClassFields": false,
     // For nodejs:
     // "lib": ["esnext"],
     // "types": ["node"],

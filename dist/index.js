@@ -6,27 +6,28 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-function Capitalize(taget, methodName, descriptor) {
-    const original = descriptor.get;
-    descriptor.get = function () {
-        const result = original?.call(this);
-        return (typeof result === 'string') ? result.toUpperCase() : result;
+function MinLength(length) {
+    return (target, propertyName) => {
+        let value;
+        const descriptor = {
+            get() { return value; },
+            set(newValue) {
+                if (newValue.length < length)
+                    throw new Error(`${propertyName} should be at least ${length} long.`);
+                value = newValue;
+            }
+        };
+        Object.defineProperty(target, propertyName, descriptor);
     };
 }
-class Person {
-    firstName;
-    lastName;
-    constructor(firstName, lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
-    get fullName() {
-        return `${this.firstName} ${this.lastName}`;
+class User {
+    constructor(password) {
+        this.password = password;
     }
 }
 __decorate([
-    Capitalize
-], Person.prototype, "fullName", null);
-let person = new Person("masud", "wubetu");
-console.log(person.fullName);
+    MinLength(4)
+], User.prototype, "password", void 0);
+let user = new User('12');
+console.log(user.password);
 //# sourceMappingURL=index.js.map
