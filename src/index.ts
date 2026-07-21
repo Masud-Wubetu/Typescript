@@ -290,7 +290,7 @@
 // class ProfileComponent {}
 
 function Log(target: any, methodName: string, descriptor: PropertyDescriptor) {
-    let original = descriptor.value as Function;console.log("Before");  
+    const original = descriptor.value as Function;  
     descriptor.value = function(message: string) {
         console.log("Before");
         original.call(this, message);
