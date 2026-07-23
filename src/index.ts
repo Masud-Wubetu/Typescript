@@ -360,11 +360,11 @@
 // let user = new User('12');
 // console.log(user.password);
 
-import { Circle, Square } from './shape';
+import * as Shapes from './shape';
 import Store from './storage';
 
 
-let circle = new Circle(1);
-let square = new Square(2);
+let circle = new Shapes.Circle(1);
+let square = new Shapes.Square(2);
 
 console.log(square);
