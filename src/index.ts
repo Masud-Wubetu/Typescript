@@ -360,7 +360,8 @@
 // let user = new User('12');
 // console.log(user.password);
 
-import { Circle, Square } from './shape'
+import { Circle, Square } from './shape';
+import Store from './storage';
 
 
 let circle = new Circle(1);
