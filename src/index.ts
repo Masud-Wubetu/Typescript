@@ -360,11 +360,19 @@
 // let user = new User('12');
 // console.log(user.password);
 
-import * as Shapes from './shape';
-import Store from './storage';
+// import * as Shapes from './shape';
+// import Store from './storage';
 
 
-let circle = new Shapes.Circle(1);
-let square = new Shapes.Square(2);
+// let circle = new Shapes.Circle(1);
+// let square = new Shapes.Square(2);
 
-console.log(square);
+// console.log(square);
+
+import { calculateTax } from './tax';
+
+let tax = calculateTax(1000);
+
+console.log(tax);
+
+

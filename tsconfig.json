@@ -28,6 +28,7 @@
     "noEmitOnError": true,
     "removeComments": true,
     "noImplicitAny": true,
+    "allowJs": true,
 
 
 
